@@ -9,20 +9,20 @@ class Notifier:
     
 class EmailNotifier(Notifier):
     def send(self, message):
-        print (f'send {message} to email')
+        print (f'send a email "{message}"')
     
 class SMSNotifier(Notifier):
     def send(self, message):
-        print (f'send {message} to SMS')
+        print (f'send a SMS "{message}"')
     
-class WhatsappNotifier(Notifier):
+class PushNotifier(Notifier):
     def send(self, message):
-        print (f'send {message} to Whatsapp')
+        print (f'send a push "{message}"')
 
 sms = SMSNotifier()
 email = EmailNotifier()
-whatsapp = WhatsappNotifier()
-notifiers = [sms, email, whatsapp]
+push = PushNotifier()
+notifiers = [sms, email, push]
 for notifier in notifiers:
     notifier.send('Hello!!')
     
